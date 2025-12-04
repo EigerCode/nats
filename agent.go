@@ -125,6 +125,10 @@ type Netbird struct {
 	Profile             string `json:"profile,omitempty"`
 	ManagementURL       string `json:"management_url,omitempty"`
 	ManagementConnected bool   `json:"management_connected,omitempty"`
+	SignalURL           string `json:"signal_url,omitempty"`
+	SignalConnected     bool   `json:"signal_connected,omitempty"`
+	PeersTotal          int    `json:"peers_total,omitempty"`
+	PeersConnected      int    `json:"peers_connected,omitempty"`
 	SSHEnabled          bool   `json:"ssh_enabled,omitempty"`
 }
 
