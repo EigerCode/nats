@@ -132,6 +132,7 @@ type Netbird struct {
 	SSHEnabled          bool     `json:"ssh_enabled,omitempty"`
 	ServiceStatus       string   `json:"service_status,omitempty"`
 	Profiles            []string `json:"profiles,omitempty"`
+	DNSServers          []string `json:"dns_servers,omitempty"`
 }
 
 type AgentReport struct {
