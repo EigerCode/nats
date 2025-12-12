@@ -145,6 +145,13 @@ type NetbirdSwitchProfile struct {
 	Profile string `json:"profile,omitempty"`
 }
 
+type NetbirdTask struct {
+	Install      bool            `json:"install,omitempty"`
+	Uninstall    bool            `json:"uinstall,omitempty"`
+	Register     bool            `json:"register,omitempty"`
+	RegisterInfo NetbirdRegister `json:"register_info,omitempty"`
+}
+
 type AgentReport struct {
 	AgentID                     string           `json:"id,omitempty"`
 	OS                          string           `json:"os,omitempty"`
