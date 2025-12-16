@@ -80,8 +80,8 @@ type Share struct {
 
 type SystemUpdate struct {
 	Status         string    `json:"status,omitempty"`
-	LastInstall    time.Time `json:"last_install,omitempty"`
-	LastSearch     time.Time `json:"last_search,omitempty"`
+	LastInstall    time.Time `json:"last_install"`
+	LastSearch     time.Time `json:"last_search"`
 	PendingUpdates bool      `json:"pending_updates,omitempty"`
 }
 
@@ -94,8 +94,8 @@ type NetworkAdapter struct {
 	DNSServers        string    `json:"dns_servers,omitempty"`
 	DNSDomain         string    `json:"dns_domain,omitempty"`
 	DHCPEnabled       bool      `json:"dhcp_enabled,omitempty"`
-	DHCPLeaseObtained time.Time `json:"dhcp_lease_obtained,omitempty"`
-	DHCPLeaseExpired  time.Time `json:"dhcp_lease_expired,omitempty"`
+	DHCPLeaseObtained time.Time `json:"dhcp_lease_obtained"`
+	DHCPLeaseExpired  time.Time `json:"dhcp_lease_expired"`
 	Speed             string    `json:"speed,omitempty"`
 	Virtual           bool      `json:"virtual,omitempty"`
 }
@@ -109,13 +109,54 @@ type Application struct {
 
 type Update struct {
 	Title      string    `json:"title,omitempty"`
-	Date       time.Time `json:"date,omitempty"`
+	Date       time.Time `json:"date"`
 	SupportURL string    `json:"support_url,omitempty"`
 }
 
 type LoggedOnUser struct {
 	Name      string    `json:"name,omitempty"`
-	LastLogon time.Time `json:"last_logon,omitempty"`
+	LastLogon time.Time `json:"last_logon"`
+}
+
+type Netbird struct {
+	Version             string   `json:"version,omitempty"`
+	Installed           bool     `json:"installed,omitempty"`
+	IP                  string   `json:"ip,omitempty"`
+	Profile             string   `json:"profile,omitempty"`
+	ManagementURL       string   `json:"management_url,omitempty"`
+	ManagementConnected bool     `json:"management_connected,omitempty"`
+	SignalURL           string   `json:"signal_url,omitempty"`
+	SignalConnected     bool     `json:"signal_connected,omitempty"`
+	PeersTotal          int      `json:"peers_total,omitempty"`
+	PeersConnected      int      `json:"peers_connected,omitempty"`
+	SSHEnabled          bool     `json:"ssh_enabled,omitempty"`
+	ServiceStatus       string   `json:"service_status,omitempty"`
+	Profiles            []string `json:"profiles,omitempty"`
+	DNSServers          []string `json:"dns_servers,omitempty"`
+	Error               string   `json:"error,omitempty"`
+}
+
+type NetBirdGroups struct {
+	ID         string `json:"id"`
+	Name       string `json:"name"`
+	PeersCount int    `json:"peers_count"`
+}
+
+type NetbirdRegister struct {
+	OneOffKey     string `json:"key,omitempty"`
+	ManagementURL string `json:"management_url,omitempty"`
+}
+
+type NetbirdSwitchProfile struct {
+	Profile string `json:"profile,omitempty"`
+}
+
+type NetbirdTask struct {
+	ID           string          `json:"id"`
+	Install      bool            `json:"install,omitempty"`
+	Uninstall    bool            `json:"uinstall,omitempty"`
+	Register     bool            `json:"register,omitempty"`
+	RegisterInfo NetbirdRegister `json:"register_info,omitempty"`
 }
 
 type AgentReport struct {
@@ -159,6 +200,7 @@ type AgentReport struct {
 	HasRustDesk                 bool             `json:"has_rust_desk,omitempty"`
 	HasRustDeskService          bool             `json:"has_rust_desk_service,omitempty"`
 	IsFlatpakRustDesk           bool             `json:"is_flatpak_rust_desk,omitempty"`
+	Netbird                     Netbird          `json:"netbird"`
 }
 
 type Config struct {
