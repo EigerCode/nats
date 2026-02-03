@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/open-uem/nats"
-	"github.com/open-uem/nats/faker/data"
+	"github.com/EigerCode/nats"
+	"github.com/EigerCode/nats/faker/data"
 	"github.com/urfave/cli/v2"
 )
 
