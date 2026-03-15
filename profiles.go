@@ -1,8 +1,8 @@
 package nats
 
 import (
-	ansiblecfg "github.com/open-uem/openuem-ansible-config/ansible"
-	"github.com/open-uem/wingetcfg/wingetcfg"
+	ansiblecfg "github.com/EigerCode/openuem-ansible-config/ansible"
+	"github.com/EigerCode/wingetcfg/wingetcfg"
 )
 
 type CfgProfiles struct {
