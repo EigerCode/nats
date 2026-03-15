@@ -1,4 +1,4 @@
-module github.com/open-uem/nats
+module github.com/EigerCode/nats
 
 go 1.25.5
 
