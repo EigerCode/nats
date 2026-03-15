@@ -18,6 +18,7 @@ type CertificateRequest struct {
 	ConsoleURL     string   `json:"console_url,omitempty"`
 	AgentId        string   `json:"agentId,omitempty"`
 	DNSName        string   `json:"dns_name,omitempty"`
+	TenantID       string   `json:"tenant_id,omitempty"`
 }
 
 type AgentCertificateData struct {
